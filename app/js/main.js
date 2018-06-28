@@ -38,6 +38,8 @@ $.getJSON('./data/data.json', function(data) {
 
   initBase();
 
+  page.base(["/nodejs-ecommerce-cms/app"])
+
   page('/', function(ctx){
     bcrumbHide()
     setTransition(data.transition.div,data.transition.type)
