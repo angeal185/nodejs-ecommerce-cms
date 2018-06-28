@@ -1,0 +1,23 @@
+{
+  "init":[{
+    "from":"./node_modules/materialize-css/js/",
+    "to":"./development/app/js/",
+    "file":"global.js"
+  },{
+    "from":"./node_modules/materialize-css/js/",
+    "to":"./development/app/js/",
+    "file":"initial.js"
+  },{
+    "from":"./node_modules/materialize-css/js/",
+    "to":"./development/app/js/",
+    "file":"cards.js"
+  },{
+    "from":"./node_modules/materialize-css/dist/css/",
+    "to":"./development/app/css/",
+    "file":"materialize.css"
+  },{
+    "from":"./node_modules/lodash/",
+    "to":"./app/js/",
+    "file":"lodash.min.js"
+  }]
+}

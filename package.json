@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-ecommerce-cms",
+  "version": "1.0.0",
+  "description": "nodejs ecommerce cms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./build/initial.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "lodash",
+    "jquery"
+  ],
+  "author": "ben eaves",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "materialize-css": "^0.100.2",
+    "nunjucks": "^3.1.3"
+  }
+}
