@@ -38,7 +38,7 @@ $.getJSON('./data/data.json', function(data) {
 
   initBase();
 
-  page.base(["/nodejs-ecommerce-cms/app"])
+  //page.base(["/nodejs-ecommerce-cms/app"])
 
   page('/', function(ctx){
     bcrumbHide()
