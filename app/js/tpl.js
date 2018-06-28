@@ -1,6 +1,7 @@
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
-var navTpl = _.template('<nav><div class="nav-wrapper"><a href="/" class="brand-logo">{{title}}</a><ul id="nav-mobile" class="right hide-on-med-and-down"></ul></div></nav>'),
+var baseTpl = _.template('<div id="app"><div class="row"><div id="sidebar" class="col m3"></div><div id="main-view" class="col m9"></div></div></div>'),
+navTpl = _.template('<nav><div class="nav-wrapper"><a href="/" class="brand-logo">{{title}}</a><ul id="nav-mobile" class="right hide-on-med-and-down"></ul></div></nav>'),
 toTopTpl = _.template('<div id="toTop" class="material-icons shrink">keyboard_arrow_up</div>')
 navLnk = _.template('<li><a class="waves-effect waves-light {{href}}Lnk" href="/{{href}}">{{title}}</a></li>'),
 catTpl = _.template('<div class="card my-4"><h5 class="card-header">{{title}}</h5><div id="{{id}}" class="card-body"></div></div>'),
@@ -26,4 +27,6 @@ blogItemsTpl = _.template('<div class="blog-list col s12"><div class="row"><div 
 blogItemTpl = _.template('<div class="container"><h3>{{title}} <span class="blog-date">{{date}}</span></h3><img class="blog-img" src="{{img}}"><h5>{{sub}}</h5><p class="truncate">{{content}}</p><p>author: {{author}}</p><a type="button" href="/blog/{{title}}" class="btn waves-effect waves-light blog-btn">back</a></div>'),
 cartListTpl = _.template('<table><thead><tr id="listObj"></tr></thead><tbody id="listItems"></tbody></table>'),
 cartItemTpl = _.template('<tr><td>{{title}}</td><td>{{id}}</td><td><a href="/category/{{category}}">{{category}}</a></td><td>{{price}}</td><td>{{stat}}</td><td><a href="/item/{{title}}">view</a></td><td><a target="_blank" href="{{link}}">Buy</a></td><td><button type="button" id="{{id}}" class="btn cartDel">Remove</button></td></tr>'),
-cartBadgeTpl = _.template('<span class="cartBadge">{{no}}</span>');
+cartBadgeTpl = _.template('<span class="cartBadge">{{no}}</span>'),
+latestItemsBase = _.template('<div class="latestItems"><h3>Latest items</h3><div class="row latestItemsList"></div></div>'),
+searchBaseTpl = _.template('<div id="search" class="input-field"><input id="searchBox" type="text" class="validate"><label for="searchBox">Search</label><button id="searchBtn" class="btn waves-effect waves-light btn-small w100">Search</button></div>')

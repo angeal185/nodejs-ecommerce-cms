@@ -15,14 +15,18 @@ $.getJSON('./data/data.json', function(data) {
 
 
 
-
-  function init(){
+  function initBase(){
+    initBaseTpl();
     initNav(data.nav);
     bcrumbInit();
     initSidebar(data.sidebar);
     addCategories(data.items);
     addTags(data.items);
     initFooter(data.footer.copy,data.footer.links);
+  }
+
+
+  function initApp(){
     searchCat(data.items);
     searchTag(data.items);
     latestItems(data.items);
@@ -32,6 +36,7 @@ $.getJSON('./data/data.json', function(data) {
 
 
 
+  initBase();
 
   page('/', function(ctx){
     bcrumbHide()
@@ -121,7 +126,8 @@ $.getJSON('./data/data.json', function(data) {
     console.log('working')
   })
 
+  initApp();
   page.start();
-  init();
+
 
 });

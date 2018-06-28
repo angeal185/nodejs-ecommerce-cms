@@ -2,6 +2,9 @@ var div = document.createElement('div');
 var showtoast = new ToastBuilder;
 var arr = [];
 
+function initBaseTpl(){
+  $('body').prepend(baseTpl())
+}
 
 function backToTop(i) {
   $("html,body").animate({
@@ -98,6 +101,7 @@ function initCartList(){
 
 function latestItems(items){
   var x = _.clone(arr);
+  $('#sidebar').append(latestItemsBase())
   _.forEach(_.sortBy(items, ['date']),function(i){
     x.push(i)
   });
@@ -253,6 +257,7 @@ function itemList(data){
 }
 
 function initSidebar(data){
+  searchBase();
   _.forIn(data,function(i,e){
     $('#sidebar').append(
       sidebarTpl({
@@ -351,6 +356,10 @@ function initBlog(data){
   itemPaginate()
 }
 
+function searchBase(){
+  $('#sidebar').append(searchBaseTpl())
+}
+
 function searchInit(res,data){
   $('#main-view').prepend(searchResTpl({title:res}))
   basePaginate()
@@ -380,6 +389,7 @@ function tagInit(res,data){
 }
 
 function initNav(items){
+
   $('#app').prepend(navTpl({
     "title":"ecommerce"
   }));
