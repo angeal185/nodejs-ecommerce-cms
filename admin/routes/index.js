@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
   });
 });
 
-_.forEach(['items','gallery','blog'],function(i){
+_.forEach(['items','gallery','blog','slides'],function(i){
   router.get('/'+i, function(req, res) {
     res.render('items', {
       title: i,

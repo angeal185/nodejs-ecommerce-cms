@@ -43,7 +43,7 @@ $.getJSON('./public/data/data.json', function(data) {
   page('/', function(ctx){
     bcrumbHide()
     setTransition(data.transition.div,data.transition.type)
-    initItemSlider(data.slides.item)
+    initItemSlider(data.slides)
     itemList(data.items)
     searchItems(data.items)
 

@@ -16,8 +16,8 @@ function addNav(nav){
 }
 
 
-function sortInit(){
-  var container = document.getElementById("sortIt");
+function sortInit(i){
+  var container = document.getElementById(i);
   var sort = Sortable.create(container, {
     animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
     handle: ".toPull", // Restricts sort start click/touch to the specified element
@@ -100,7 +100,7 @@ function updateInfo(){
     $( ".itemsGroup" ).each(function(i, el) {
       if (title === 'items'){
         out.push({
-        "id":$(el).find($('.id')).val(),
+        "id":parseInt($(el).find($('.id')).val()),
         "title":$(el).find($('.title')).val(),
         "subTitle":$(el).find($('.subTitle')).val(),
         "price":parseInt($(el).find($('.price')).val()),
@@ -108,7 +108,7 @@ function updateInfo(){
         "tags":_.words($(el).find($('.tags')).val(), /[^, ]+/g),
         "description":$(el).find($('.description')).val(),
         "link":$(el).find($('.link')).val(),
-        "date":$(el).find($('.date')).val(),
+        "date":parseInt($(el).find($('.date')).val()),
         "imgMain":$(el).find($('.imgMain')).val(),
         "imgSub":$(el).find($('.imgSub')).val(),
         "imgList":_.words($(el).find($('.imgList')).val(), /[^, ]+/g),
@@ -126,8 +126,15 @@ function updateInfo(){
         "subTitle":$(el).find($('.subTitle')).val(),
         "author":$(el).find($('.author')).val(),
         "img":$(el).find($('.img')).val(),
-        "date":$(el).find($('.date')).val(),
+        "date":parseInt($(el).find($('.date')).val()),
         "description":$(el).find($('.description')).val()
+      })
+    } else if (title === 'slides'){
+      out.push({
+        "img":$(el).find($('.img')).val(),
+        "align":$(el).find($('.align')).val(),
+        "title":$(el).find($('.title')).val(),
+        "sub":$(el).find($('.sub')).val()
       })
     }
     });
@@ -138,6 +145,7 @@ function updateInfo(){
     });
   });
 }
+
 
 function bcrumbInit(){
   $('nav').after(
@@ -160,7 +168,7 @@ function bcrumbInit(){
 }
 
 function initItems(i,e){
-  sortInit()
+  sortInit("sortIt")
   createItems(i)
   deleteItem()
   showItem()

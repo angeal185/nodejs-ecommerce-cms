@@ -18,7 +18,7 @@ itemFootTpl = _.template('<hr><a type="button" target="_blank" href="{{link}}" c
 itemImgTpl = _.template('<img class="materialboxed w100" src="{{img}}">'),
 itemImgSmallTpl = _.template('<div class="col m4"><img class="materialboxed w100 mt40" src="{{img}}"></div>'),
 itemSliderTpl = _.template('<div class="slider"><ul class="slides"></ul></div>'),
-itemSlideTpl = _.template('<li><img src="{{img}}"><div class="caption {{align}}-align"><h3>{{header}}</h3><h5 class="light grey-text text-lighten-3">{{sub}}</h5></div></li>'),
+itemSlideTpl = _.template('<li><img src="{{img}}"><div class="caption {{align}}-align"><h3>{{title}}</h3><h5 class="light grey-text text-lighten-3">{{sub}}</h5></div></li>'),
 bCrumb = _.template('<a href="{{href}}" class="breadcrumb">{{title}}</a>'),
 latestItemTpl = _.template('<div class="col s12"><div class="card horizontal row side-item"><div class="card-image col s4"><img class="side-img" src="{{img}}"></div><div class="card-stacked col s8"><div class="card-content"><p class="truncate">Title: <span>{{title}}</span></p><p>Price: <span>{{price}}</span></p><a href="/item/{{src}}">view</a></div></div></div></div>'),
 galleryItemTpl = _.template('<div class="col s3"><h5 class="center">{{title}}</h5><img class="materialboxed w100 shrink bs" data-caption="{{text}}" src="{{src}}"></div>'),

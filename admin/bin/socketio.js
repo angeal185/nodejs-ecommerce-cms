@@ -1,4 +1,5 @@
 const app = require('../../admin'),
+_ = require('lodash'),
 debug = require('debug')('app:server'),
 http = require('http'),
 fs = require('fs'),
@@ -97,19 +98,27 @@ io.sockets.on("connection", function(socket){
 
 
 socket.on('updateItems', function(i){
-  fs.copyFile('./admin/data/data.json', './admin/data/data.json.bak', (err) => {
-      if (err) throw err;
-      modJSON.path('./admin/data/data.json')
-        .modify(i.type, i.data);
+  var udFile = './admin/data/data.json',
+  outFile = './app/public/data/data.json';
 
-      fs.readFile('./admin/data/data.json', 'utf8' , function(err, data){
+  fs.copyFile(udFile, udFile +'.bak', (err) => {
+      if (err) throw err;
+
+      fs.readFile(udFile, 'utf8' , function(err, data){
         if (err) throw err;
         out = JSON.parse(data)
-        //console.log(data);
-        fs.writeFile('./app/public/data/data.json', JSON.stringify(out),function(err){
-          if (err) throw err;
-          socket.emit('success', 'success');
-        });
+
+        out[i.type] = i.data
+        console.log(JSON.stringify(out,0,2));
+
+        _.forEach([udFile,outFile],function(toWrite){
+          fs.writeFile(toWrite, JSON.stringify(out),function(err){
+            if (err) throw err;
+          });
+        })
+        socket.emit('success', 'success');
+
+
       });
   });
 });

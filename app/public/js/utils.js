@@ -138,7 +138,7 @@ function empty(i){
 function initItemSlider(data){
   $('#main-view').prepend(itemSliderTpl());
   _.forEach(data,function(i){
-    $('.slides').append(itemSlideTpl({"img":i.img,"align":i.align,"header":i.header,"sub":i.sub}))
+    $('.slides').append(itemSlideTpl({"img":i.img,"align":i.align,"title":i.title,"sub":i.sub}))
   })
   $('.slider').slider();
 }
