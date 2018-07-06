@@ -11,7 +11,7 @@ setCart([{
 */
 
 
-$.getJSON('./data/data.json', function(data) {
+$.getJSON('./public/data/data.json', function(data) {
 
 
 
@@ -31,7 +31,7 @@ $.getJSON('./data/data.json', function(data) {
     searchTag(data.items);
     latestItems(data.items);
     cartBadgeInit();
-    scrollTop();
+    scrollTop('#app');
   }
 
 
@@ -83,6 +83,7 @@ $.getJSON('./data/data.json', function(data) {
   });
 
   page('/gallery', function(){
+
     bcrumbChange('Gallery')
     setTransition(data.transition.div,data.transition.type)
     showtoast('Gallery')

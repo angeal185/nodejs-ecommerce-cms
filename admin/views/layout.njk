@@ -1,0 +1,33 @@
+{% import "macros/macros.njk" as macro %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>{{title}}</title>
+    {% for i in config.styles %}
+      {{macro.css(s=i)}}
+    {% endfor %}
+  </head>
+  <body>
+
+    <div class="main">
+      {% include "includes/head.njk" %}
+      {% block content %}{% endblock %}
+    </div>
+    <script>
+      var title = {{title|dump|safe}};
+      var data = {{data|dump|safe}};
+    </script>
+    {{macro.jsT(s="/socket.io/socket.io")}}
+    {% for i in config.scripts %}
+      {{macro.js(s=i)}}
+    {% endfor %}
+    <script type="text/javascript">
+      init({{config.nav|dump|safe}})
+      bcrumbInit()
+    </script>
+    {%block scripts%}{% endblock %}
+  </body>
+</html>

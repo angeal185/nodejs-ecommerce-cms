@@ -1,0 +1,10 @@
+{
+  "delay": "300",
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "ext": "njk, json, js, html"
+}

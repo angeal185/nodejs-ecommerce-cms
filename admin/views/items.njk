@@ -1,0 +1,15 @@
+{% extends 'layout.njk' %}
+{% block content %}
+{{macro.mainBlock()}}
+{% endblock %}
+{%block scripts%}
+<script>
+if (title === 'items'){
+  initItems(data.items,data.items[0])
+} else if (title === 'gallery'){
+  initItems(data.gallery,data.gallery[0])
+} else if (title === 'blog'){
+  initItems(data.blog,data.blog[0])
+}
+</script>
+{% endblock %}

@@ -1,5 +1,16 @@
 {
-  "app":{
-    "port":"3000"
-  }
+  "app": {
+    "port": "8000"
+  },
+  "port":"3000",
+  "styles": ["materialize.min","styles", "admin"],
+  "scripts": ["lodash.min", "jquery.min","tpl","sortable","shared","admin"],
+  "nav":[
+    "items",
+    "blog",
+    "gallery",
+    "slides",
+    "settings",
+    "config"
+  ]
 }

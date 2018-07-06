@@ -1,0 +1,37 @@
+{%- macro css(s) -%}
+<link rel="stylesheet" href="/css/{{s}}.css">
+{%- endmacro -%}
+{%- macro cssT(s) -%}
+<link rel="stylesheet" href="{{s}}">
+{%- endmacro -%}
+{%- macro js(s) -%}
+<script src="/js/{{s}}.js"></script>
+{%- endmacro -%}
+{%- macro jsT(s) -%}
+<script src="{{s}}.js"></script>
+{%- endmacro -%}
+{%- macro menuHead(i) -%}
+<a class="menuHead blink">{{i}}<i class="icon-right-open"></i></a>
+{%- endmacro -%}
+{%- macro menuItem(x,y,admin) -%}
+<li class="menu-item">
+  {{menuHead(i=x)}}
+  <ul class="sub-menu">
+    {% for item in y %}
+      <li class="menu-item"><a class="blink" href="/{{item}}">{{item|capitalize}}</a></li>
+    {% endfor %}
+  </ul>
+</li>
+{%- endmacro -%}
+
+{%- macro btn(i,e,x) -%}
+  <button type="button" id="{{i}}" class="btn {{e}}">{{x}}</button>
+{%- endmacro -%}
+
+{%- macro mainBlock(i,e,x) -%}
+  <div class="container">
+    <div id="sortIt" class="itemsDiv row"></div>
+    {{btn(i="addItem",e="",x="New")}}
+    {{btn(i="updateBtn",e="right",x="Update")}}
+  </div>
+{%- endmacro -%}

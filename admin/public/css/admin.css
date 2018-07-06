@@ -1,0 +1,18 @@
+.itemsGroup{
+  display:none;
+}
+
+.category, .tag {
+    text-align: left;
+    color: inherit;
+    background-color: inherit;
+    cursor: inherit;
+}
+
+textarea.description{
+    min-height: 300px;
+}
+
+.toPull{
+  cursor: -webkit-grab;
+}
